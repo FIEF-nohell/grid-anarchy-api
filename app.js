@@ -14,10 +14,9 @@ app.get("/", (req, res) =>{
 app.post("/push_data", (req, res) =>{
 
     var body = req.body.fief;
-    var val1;
 
     database.getConnection((err, con) => {
-        con.query(`UPDATE online set grid_1 = ?, grid_2 = ?, grid_3 = ?, grid_4 = ?, grid_5 = ?, grid_6 = ?, grid_7 = ?`, [body,body,body,body,body,body,body],
+        con.query(`UPDATE online set grid_1 = ?, grid_2 = ?, grid_3 = ?, grid_4 = ?, grid_5 = ?, grid_6 = ?, grid_7 = ?`, [body[0],body[1],body[2],body[3],body[4],body[5],body[6]],
             (err, result) => {
         if (err) {
             con.release();
@@ -26,12 +25,10 @@ app.post("/push_data", (req, res) =>{
         con.release();
         });
     });    
-    return res.json({ header: "ses", message: 'soos.' })
+    return res.json({ header: "Post status OK", message: 'No errors.' })
 })
 
 app.get("/get_data", (req, res) =>{
-
-
     database.getConnection((err, con) => {
         con.query(`Select * from online`,
             (err, result) => {
@@ -43,7 +40,7 @@ app.get("/get_data", (req, res) =>{
         con.release();
         });
     });    
-    return res.json({ header: "ses", message: 'soos.' })
+    return res.json({ header: "Request status OK", message: 'No errors.' })
 })
 
 
