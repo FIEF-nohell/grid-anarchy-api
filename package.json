@@ -1,0 +1,23 @@
+{
+  "name": "grid-anarchy-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FIEF-nohell/grid-anarchy-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FIEF-nohell/grid-anarchy-api/issues"
+  },
+  "homepage": "https://github.com/FIEF-nohell/grid-anarchy-api#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
